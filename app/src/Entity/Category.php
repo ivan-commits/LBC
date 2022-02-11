@@ -15,17 +15,17 @@ class Category
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type: 'integer')
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type: 'string', length: 255)
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @ORM\OneToMany(mappedBy: 'category', targetEntity: Post::class)
+     * @ORM\OneToMany(mappedBy="category", targetEntity=Post::class)
      */
     private $posts;
 

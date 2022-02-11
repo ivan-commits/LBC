@@ -13,34 +13,34 @@ class Post
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type: 'integer')
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type: 'string', length: 255)
+     * @ORM\Column(type="string")
      */
     private $title;
 
     /**
-     * @ORM\Column(type: 'text')
+     * @ORM\Column(type="string")
      */
     private $content;
 
     /**
-     * @ORM\Column(type: 'string', length: 255, nullable: true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $brandCar;
 
     /**
-     * @ORM\Column(type: 'string', length: 255, nullable: true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $nameCar;
 
     /**
-    * @ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'posts')
-    * @ORM\JoinColumn(nullable: false)
-    */
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
     private $category;
 
     public function getId(): ?int

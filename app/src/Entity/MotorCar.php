@@ -13,17 +13,17 @@ class MotorCar
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type: 'integer')
+     * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type: 'string', length: 255)
+     * @ORM\Column(type="string")
      */
     private $brand;
 
     /**
-     * @ORM\Column(type: 'string', length: 255)
+     * @ORM\Column(type="string")
      */
     private $name;
 
