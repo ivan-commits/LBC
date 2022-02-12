@@ -28,7 +28,7 @@ class HelperService
             ->setCode($isApplicationJson ? 200 : 400)
             ->setData($payload)
             ->setContext($request->getRequestUri())
-            ->setMessage($isApplicationJson ? 'initApiResult successful' : 'error Content-Type must be application/json');
+            ->setMessage($isApplicationJson ? 'success' : 'error Content-Type must be application/json');
 
         return $apiResult;
     }
