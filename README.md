@@ -51,3 +51,10 @@ curl --location --request PUT '192.168.0.41:8080/post/1' \
 curl --location --request DELETE '192.168.0.41:8080/post/1' \
 --header 'Content-Type: application/json'
 ```
+## Information Supplémentaire:
+> Mysql
+   - **accès au container:** ```docker exec -it mysql-container bash```
+   - **user:** ```root```
+   - **password:** ```secret```
+   - **accès à mysql:** ```mysql -u root -p```
+   - **accès à la base:** ```use db_name;```
