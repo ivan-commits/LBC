@@ -6,7 +6,7 @@ use App\Entity\MotorCar;
 
 class MotorCarService extends HelperService
 {
-    public function searchMotorCar(string $payload)
+    public function searchMotorCar(string $payload) :?MotorCar
     {
         $words = $this->formatSearchPayload($payload);
         $result = !empty($words);
