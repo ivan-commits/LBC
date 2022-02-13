@@ -4,5 +4,5 @@ namespace App;
 
 class Constant
 {
-    public const CATEGORY_MOTORCAR = 'Motorcar';
+    public const CATEGORY_MOTORCAR = 'MotorCar';
 }

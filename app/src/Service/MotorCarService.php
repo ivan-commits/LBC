@@ -3,27 +3,43 @@
 namespace App\Service;
 
 use App\Entity\MotorCar;
-use Doctrine\Persistence\ManagerRegistry;
 
 class MotorCarService extends HelperService
 {
-
-    public function searchMotorCar(string $payload) :?MotorCar
+    public function searchMotorCar(string $payload)
     {
-        $carName = $this->formatSearchPayload($payload);
-        $result = !empty($carName);
-
+        $words = $this->formatSearchPayload($payload);
+        $result = !empty($words);
+        $find= [];
+        $motorCar = null;
+        //get words refer to a brand
         if($result){
-            foreach ($carName as $name){
-                $motorCar = $this->doctrine->getRepository(MotorCar::class)->findOneBy(['name' => $name]);
-                if($motorCar!==null){
-                    return $motorCar;
+            $goodWords = [];
+            foreach($words as $word){
+                $motorCars = $this->doctrine->getRepository(MotorCar::class)->getByName($word);
+                if(!empty($motorCars)){
+                    $goodWords[]= $word;
                 }
             }
+            $result = !empty($goodWords);
+        }
+        //check if good words combination refer to motor_car
+        if($result){
+            $combination = $this->getCombination($goodWords);
+            foreach($combination ?? [] as $words){
+                $motorCars = $this->doctrine->getRepository(MotorCar::class)->findOneBy(['name'=>$words]);
+                if($motorCars!==null){
+                    $find[] = $motorCars;
+                }
+            }
+            //check find unique motor_car
+            $result = count($find) === 1;
         }
 
-        return null;
+        if($result){
+            $motorCar = $find[0];
+        }
+
+        return $motorCar;
     }
-
-
 }
