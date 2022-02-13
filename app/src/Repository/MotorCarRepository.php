@@ -19,22 +19,17 @@ class MotorCarRepository extends ServiceEntityRepository
         parent::__construct($registry, MotorCar::class);
     }
 
-    // /**
-    //  * @return MotorCar[] Returns an array of MotorCar objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return MotorCar[] Returns an array of MotorCar objects
+     */
+    public function getByName(string $name): array
     {
         return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('m.name LIKE :name')
+            ->setParameter('name', '%'.$name.'%')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?MotorCar
