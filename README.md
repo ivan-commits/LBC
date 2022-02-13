@@ -2,17 +2,17 @@
 
 ## Lancer l'application
 
-1. Clone du project LBC
-    - ```git clone https://github.com/ivan-commits/LBC.git```
+**1. Clone du project LBC**
+   - ```git clone https://github.com/ivan-commits/LBC.git```
 
-2. Instanciation des containers (depuis le dossier LBC)
-    - ```docker-compose up -d --build```
-    - si l'invité de commande vous propose ```Continue with the new image ?``` entrer ```yes```
+**2. Instanciation des containers (depuis le dossier LBC)**
+   - ```docker-compose up -d --build```
+   - si l'invité de commande vous propose ```Continue with the new image ?``` entrer ```yes```
 
-3. Mise à jour du projet (depuis le container php-container)
-    - accédez au container php : ```docker exec -it php-container bash ```
-      - mise à jours des packages : ```composer update```
-      - mise à jours de la base de données : ```php bin/console d:m:m```
+**3. Mise à jour du projet (depuis le container php-container)**
+   - accédez au container php : ```docker exec -it php-container bash ```
+     - mise à jours des packages : ```composer update```
+     - mise à jours de la base de données : ```php bin/console d:m:m```
 
 ## Liste de requêtes curl
 **Changer l'adresse ip par celle de votre machine virtuel**
@@ -58,3 +58,5 @@ curl --location --request DELETE '192.168.0.41:8080/post/1' \
    - **password:** ```secret```
    - **accès à mysql:** ```mysql -u root -p```
    - **accès à la base:** ```use db_name;```
+> PHP
+- **accès au container:** ```docker exec -it php-container bash```
