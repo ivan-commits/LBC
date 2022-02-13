@@ -10,22 +10,22 @@ class MotorCarService extends HelperService
     {
         $words = $this->formatSearchPayload($payload);
         $result = !empty($words);
-        $find= [];
         $motorCar = null;
         //get words refer to a brand
         if($result){
-            $goodWords = [];
+            $wordsReferToBrand = [];
             foreach($words as $word){
                 $motorCars = $this->doctrine->getRepository(MotorCar::class)->getByName($word);
                 if(!empty($motorCars)){
-                    $goodWords[]= $word;
+                    $wordsReferToBrand[]= $word;
                 }
             }
-            $result = !empty($goodWords);
+            $result = !empty($wordsReferToBrand);
         }
-        //check if good words combination refer to motor_car
+        //check if wordsReferToBrand combination refer unique motorcar
         if($result){
-            $combination = $this->getCombination($goodWords);
+            $combination = $this->getCombination($wordsReferToBrand);
+            $find= [];
             foreach($combination ?? [] as $words){
                 $motorCars = $this->doctrine->getRepository(MotorCar::class)->findOneBy(['name'=>$words]);
                 if($motorCars!==null){
