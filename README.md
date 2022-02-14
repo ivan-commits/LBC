@@ -50,6 +50,10 @@ curl --location --request PUT '192.168.0.41:8080/post/1' \
 curl --location --request DELETE '192.168.0.41:8080/post/1' \
 --header 'Content-Type: application/json'
 ```
+## Lancer les tests:
+   - accédez au container php : ```docker exec -it php-container bash ```
+     - php unit : ```php ./vendor/bin/phpunit```
+
 ## Information Supplémentaire:
 > Mysql
    - **accès au container:** ```docker exec -it mysql-container bash```
