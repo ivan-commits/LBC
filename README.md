@@ -19,7 +19,7 @@ Merci à vous
    - mise à jours des packages : ```composer update```
 
 ## Liste de requêtes curl
-**Changer l'adresse ip par celle de votre machine virtuel**
+**Changer l'adresse ip par celle de votre machine virtuel en pointant vers le port 8080**
 
 > Create
 ```
