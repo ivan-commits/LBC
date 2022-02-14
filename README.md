@@ -11,7 +11,7 @@
 
 **3. Mise à jour du projet (depuis le container php-container)**
    - accédez au container php : ```docker exec -it php-container bash ```
-     - mise à jours des packages : ```composer update```
+   - mise à jours des packages : ```composer update```
 
 ## Liste de requêtes curl
 **Changer l'adresse ip par celle de votre machine virtuel**
@@ -52,7 +52,7 @@ curl --location --request DELETE '192.168.0.41:8080/post/1' \
 ```
 ## Lancer les tests:
    - accédez au container php : ```docker exec -it php-container bash ```
-     - php unit : ```php ./vendor/bin/phpunit```
+   - php unit : ```php ./vendor/bin/phpunit```
 
 ## Information Supplémentaire:
 > Mysql
