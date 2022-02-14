@@ -1,6 +1,11 @@
 # Test technique équipe Import 
+Merci pour l'opportunité que vous m'accordez.<br/>
+Malgré la charge de travail que j'ai actuellement,<br/>
+j'ai réalisé ce test technique avec beaucoup de plaisir durant mon week-end.<br/>
+Cependant je suis conscient que certaines choses auraient pu être mieux développées (tests unitaires, algo, gestion de l'api, docker).<br/>
+Merci à vous
 
-## Lancer l'application
+## Lancer l'application (depuis la branche master)
 
 **1. Clone du project LBC**
    - ```git clone https://github.com/ivan-commits/LBC.git```
@@ -61,5 +66,6 @@ curl --location --request DELETE '192.168.0.41:8080/post/1' \
    - **password:** ```secret```
    - **accès à mysql:** ```mysql -u root -p```
    - **accès à la base:** ```use db_name;```
+   - **accès à la base de test:** ```use db_name_test;```
 > PHP
 - **accès au container:** ```docker exec -it php-container bash```
