@@ -7,12 +7,11 @@
 
 **2. Instanciation des containers (depuis le dossier LBC)**
    - ```docker-compose up -d --build```
-   - si l'invité de commande vous propose ```Continue with the new image ?``` entrer ```yes```
+   - si l'invité de commande vous propose ```Continue with the new image ?``` entrer ```y```
 
 **3. Mise à jour du projet (depuis le container php-container)**
    - accédez au container php : ```docker exec -it php-container bash ```
      - mise à jours des packages : ```composer update```
-     - mise à jours de la base de données : ```php bin/console d:m:m```
 
 ## Liste de requêtes curl
 **Changer l'adresse ip par celle de votre machine virtuel**
