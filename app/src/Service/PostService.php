@@ -49,9 +49,14 @@ class PostService extends HelperService
         }
         //create post
         if ($result) {
-            $apiResult->setData($post);
             $this->doctrine->getManager()->persist($post);
             $this->doctrine->getManager()->flush();
+            $post = ['id'=>$post->getId(),
+                'title' => $post->getTitle(),
+                'content' => $post->getContent(),
+                'brandCar' => $post->getBrandCar(),
+                'carName' => $post->getNameCar()];
+            $apiResult->setData($post);
         }
 
         $apiResult->setContext('PostService: create');
