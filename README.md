@@ -4,7 +4,9 @@ Malgré la charge de travail que j'ai actuellement,<br/>
 j'ai réalisé ce test technique avec beaucoup de plaisir durant mon week-end.<br/>
 Cependant je suis conscient que certaines choses auraient pu être mieux développées (tests unitaires, algorithmes, gestion de l'api, docker).<br/>
 Merci à vous
-
+Ivan Colonneau
+0781320825
+ivancolonneau@gmail.com
 ## Lancer l'application (depuis la branche master)
 
 **1. Clone du project LBC**
